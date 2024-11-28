@@ -17,6 +17,13 @@ ingress {
     protocol    = "tcp"
     cidr_blocks = ["10.187.0.0/16"]
   }
+  ingress {
+    description = "ICMP"
+    from_port   = -1
+    to_port     = -1
+    protocol    = "icmp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
   egress {
     from_port   = 0
     to_port     = 0

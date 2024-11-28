@@ -14,6 +14,7 @@ resource "aws_launch_template" "app1_tokyo_LT" {
     yum install -y httpd
     systemctl start httpd
     systemctl enable httpd
+    locale: ja_JP.UTF-8 LANG: ja_JP.UTF-8 LC_ALL: ja_JP.UTF-8
     # Install and configure the CloudWatch agent
     yum install -y amazon-cloudwatch-agent
     cat <<-CWAGENTCONFIG > /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json
@@ -132,6 +133,7 @@ resource "aws_launch_template" "app1_nyc_LT" {
     yum install -y httpd
     systemctl start httpd
     systemctl enable httpd
+    locale: en_US.UTF-8 LANG: en_US.UTF-8 LC_ALL: en_US.UTF-8
     # Install and configure the CloudWatch agent
     yum install -y amazon-cloudwatch-agent
     cat <<-CWAGENTCONFIG > /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json
@@ -250,6 +252,7 @@ resource "aws_launch_template" "app1_london_LT" {
     yum install -y httpd
     systemctl start httpd
     systemctl enable httpd
+    locale: en_GB.UTF-8 LANG: en_GB.UTF-8 LC_ALL: en_GB.UTF-8
     # Install and configure the CloudWatch agent
     yum install -y amazon-cloudwatch-agent
     cat <<-CWAGENTCONFIG > /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json
@@ -368,6 +371,7 @@ resource "aws_launch_template" "app1_brazil_LT" {
     yum install -y httpd
     systemctl start httpd
     systemctl enable httpd
+    locale: pt_BR.UTF-8 LANG: pt_BR.UTF-8 LC_ALL: pt_BR.UTF-8
     # Install and configure the CloudWatch agent
     yum install -y amazon-cloudwatch-agent
     cat <<-CWAGENTCONFIG > /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json
@@ -486,6 +490,7 @@ resource "aws_launch_template" "app1_aussie_LT" {
     yum install -y httpd
     systemctl start httpd
     systemctl enable httpd
+    locale: en_AU.UTF-8 LANG: en_AU.UTF-8 LC_ALL: en_AU.UTF-8
     # Install and configure the CloudWatch agent
     yum install -y amazon-cloudwatch-agent
     cat <<-CWAGENTCONFIG > /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json
@@ -604,6 +609,7 @@ resource "aws_launch_template" "app1_hk_LT" {
     yum install -y httpd
     systemctl start httpd
     systemctl enable httpd
+    locale: zh_HK.UTF-8 LANG: zh_HK.UTF-8 LC_ALL: zh_HK.UTF-8
     # Install and configure the CloudWatch agent
     yum install -y amazon-cloudwatch-agent
     cat <<-CWAGENTCONFIG > /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json
@@ -722,6 +728,7 @@ resource "aws_launch_template" "app1_cali_LT" {
     yum install -y httpd
     systemctl start httpd
     systemctl enable httpd
+    locale: en_US.UTF-8 LANG: en_US.UTF-8 LC_ALL: en_US.UTF-8
     # Install and configure the CloudWatch agent
     yum install -y amazon-cloudwatch-agent
     cat <<-CWAGENTCONFIG > /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json
