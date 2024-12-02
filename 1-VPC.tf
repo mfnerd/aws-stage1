@@ -1,11 +1,11 @@
-# this  makes  vpc.id which is aws_vpc.app1.id
-resource "aws_vpc" "teledoc-app1" {
-  cidr_block = "10.187.0.0/16"
+resource "aws_vpc" "teledoc" {
+  provider = var.alias
+  cidr_block = var.vpc_cidr_blocks[var.location]
 
   tags = {
-    Name = "teledoc-app1"
+    Name    = "teledoc-${each.key}-vpc"
     Service = "applicationLB"
-    Owner = "MFnerd"
-    Planet = "Uranus"
+    Owner   = "MFNerd"
+    Planet  = "Uranus"
   }
 }

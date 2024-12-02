@@ -1,8 +1,10 @@
-resource "aws_lb_target_group" "app1_tg" {
-  name     = "app1-target-group"
+resource "aws_lb_target_group" "app1" {
+  for_each = toset(var.region)
+  # provider = aws[lookup(var.alias, each.key)]
+  name     = "app1-target-group-${each.key}"
   port     = 80
   protocol = "HTTP"
-  vpc_id   = aws_vpc.teledoc-app1.id
+  vpc_id   = aws_vpc.teledoc[each.key].id
   target_type = "instance"
 
   health_check {
@@ -17,7 +19,7 @@ resource "aws_lb_target_group" "app1_tg" {
   }
 
   tags = {
-    Name    = "App1TargetGroup"
+    Name    = "App1TargetGroup-${each.key}"
     Service = "App1"
     Owner   = "User"
     Project = "Web Service"
