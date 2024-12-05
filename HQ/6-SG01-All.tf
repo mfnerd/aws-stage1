@@ -26,6 +26,10 @@ ingress {
 
 }
 
+
+
+
+
 resource "aws_security_group" "app1-sg02-LB01" {
   name        = "app1-sg02-LB01"
   description = "app1-sg02-LB01"
