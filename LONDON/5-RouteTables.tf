@@ -24,19 +24,25 @@ resource "aws_route_table" "private" {
   }
 }
 
-resource "aws_route_table_association" "public" {
+resource "aws_route_table_association" "public-eu-west-2a" {
   subnet_id      = aws_subnet.public-eu-west-2a.id
   route_table_id = aws_route_table.public.id
 }
-
-resource "aws_route_table_association" "private" {
+resource "aws_route_table_association" "public-eu-west-2b" {
+  subnet_id      = aws_subnet.public-eu-west-2b.id
+  route_table_id = aws_route_table.public.id
+}
+resource "aws_route_table_association" "private-eu-west-2a" {
   subnet_id      = aws_subnet.private-eu-west-2a.id
   route_table_id = aws_route_table.private.id
 }
-
-# # Add routes to the transit gateway
-# resource "aws_route" "tgw_routes" {
-#   route_table_id = aws_route_table.public.id
-#   destination_cidr_block = "10.0.0.0/8" # Adjust as needed
-#   transit_gateway_id = aws_vpc_transit_gateway.tgw-tokyo.id
-# }
+resource "aws_route_table_association" "private-eu-west-2b" {
+  subnet_id      = aws_subnet.private-eu-west-2b.id
+  route_table_id = aws_route_table.private.id
+}
+# # # Add routes to the transit gateway
+# # resource "aws_route" "tgw_routes" {
+# #   route_table_id = aws_route_table.public.id
+# #   destination_cidr_block = "10.0.0.0/8" # Adjust as needed
+# #   transit_gateway_id = aws_vpc_transit_gateway.tgw-tokyo.id
+# # }
