@@ -3,7 +3,7 @@ resource "aws_launch_template" "hk_LT" {
   image_id      = "ami-06f707739f2271995"  
   instance_type = "t2.micro"
 
-  key_name = "linuxbox"
+  # key_name = "linuxbox"
 
   vpc_security_group_ids = [aws_security_group.app1-sg01-servers.id]
 
