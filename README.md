@@ -1,3 +1,3 @@
 # aws-stage1
-# I will update this as I go
+# needs modules to link resources and create shared networking resources
 # 
