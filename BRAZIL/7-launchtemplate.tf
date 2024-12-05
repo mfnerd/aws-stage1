@@ -3,7 +3,7 @@ resource "aws_launch_template" "brz_LT" {
   image_id      = "ami-0c820c196a818d66a"  
   instance_type = "t2.micro"
 
-  key_name = "linuxbox"
+  # key_name = "linuxbox"
 
   vpc_security_group_ids = [aws_security_group.app1-sg01-servers.id]
 
