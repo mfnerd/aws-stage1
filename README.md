@@ -1,3 +1,3 @@
 # aws-stage1
-# abandoned modules. still need syslog server/internal LB/ASG in Tokyo. Configure Bucket policy.
+# needs transit gateway IDs,syslog server/internal LB/ASG in Osaka(ap-northeast-3). Configure Bucket policy.
 # 
