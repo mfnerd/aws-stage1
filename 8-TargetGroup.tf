@@ -111,8 +111,8 @@ resource "aws_lb_target_group" "hong_kong_tg" {
   name     = "hong-kong-target-group"
   port     = 80
   protocol = "HTTP"
-  provider = aws.hong_kong
-  vpc_id   = aws_vpc.teledoc-hong-kong.id
+  provider = aws.hongkong
+  vpc_id   = aws_vpc.teledoc-hongkong.id
   target_type = "instance"
 
   health_check {

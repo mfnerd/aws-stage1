@@ -2,7 +2,7 @@
 resource "aws_launch_template" "tokyo_LT" {
   provider = aws.tokyo
   name_prefix   = "tokyo_LT"
-  image_id      = data.aws_ami.amazon-linux-2.id
+  image_id      = "ami-023ff3d4ab11b2525"
   instance_type = "t2.micro"
   # key_name      = "linuxbox"
   vpc_security_group_ids = [aws_security_group.app1-sg01-servers.id]
@@ -46,10 +46,10 @@ resource "aws_launch_template" "tokyo_LT" {
 resource "aws_launch_template" "nyc_LT" {
   provider = aws.nyc
   name_prefix   = "nyc_LT"
-  image_id      = data.aws_ami.amazon-linux-2.id
+  image_id      = "ami-0453ec754f44f9a4a"
   instance_type = "t2.micro"
   # key_name      = "linuxbox"
-  vpc_security_group_ids = [aws_security_group.app1-sg01-servers.id]
+  vpc_security_group_ids = [aws_security_group.app1-sg03-servers.id]
 
   iam_instance_profile {
     arn = aws_iam_instance_profile.ec2_instance_profile.arn
@@ -90,10 +90,10 @@ resource "aws_launch_template" "nyc_LT" {
 resource "aws_launch_template" "london_LT" {
   provider = aws.london
   name_prefix   = "london_LT"
-  image_id      = data.aws_ami.amazon-linux-2.id
+  image_id      = "ami-0c76bd4bd302b30ec"
   instance_type = "t2.micro"
   # key_name      = "linuxbox"
-  vpc_security_group_ids = [aws_security_group.app1-sg01-servers.id]
+  vpc_security_group_ids = [aws_security_group.app1-sg05-servers.id]
 
   iam_instance_profile {
     arn = aws_iam_instance_profile.ec2_instance_profile.arn
@@ -134,10 +134,10 @@ resource "aws_launch_template" "london_LT" {
 resource "aws_launch_template" "california_LT" {
   provider = aws.california
   name_prefix   = "california_LT"
-  image_id      = data.aws_ami.amazon-linux-2.id
+  image_id      = "ami-038bba9a164eb3dc1"
   instance_type = "t2.micro"
   # key_name      = "linuxbox"
-  vpc_security_group_ids = [aws_security_group.app1-sg01-servers.id]
+  vpc_security_group_ids = [aws_security_group.app1-sg07-servers.id]
 
   iam_instance_profile {
     arn = aws_iam_instance_profile.ec2_instance_profile.arn
@@ -178,10 +178,10 @@ resource "aws_launch_template" "california_LT" {
 resource "aws_launch_template" "hongkong_LT" {
   provider = aws.hongkong
   name_prefix   = "hongkong_LT"
-  image_id      = data.aws_ami.amazon-linux-2.id
-  instance_type = "t2.micro"
+  image_id      = "ami-06f707739f2271995"
+  instance_type = "t3.micro"
   # key_name      = "linuxbox"
-  vpc_security_group_ids = [aws_security_group.app1-sg01-servers.id]
+  vpc_security_group_ids = [aws_security_group.app1-sg09-servers.id]
 
   iam_instance_profile {
     arn = aws_iam_instance_profile.ec2_instance_profile.arn
@@ -222,10 +222,10 @@ resource "aws_launch_template" "hongkong_LT" {
 resource "aws_launch_template" "australia_LT" {
   provider = aws.australia
   name_prefix   = "australia_LT"
-  image_id      = data.aws_ami.amazon-linux-2.id
+  image_id      = "ami-0146fc9ad419e2cfd"
   instance_type = "t2.micro"
   # key_name      = "linuxbox"
-  vpc_security_group_ids = [aws_security_group.app1-sg01-servers.id]
+  vpc_security_group_ids = [aws_security_group.app1-sg11-servers.id]
 
   iam_instance_profile {
     arn = aws_iam_instance_profile.ec2_instance_profile.arn
@@ -266,10 +266,10 @@ resource "aws_launch_template" "australia_LT" {
 resource "aws_launch_template" "brazil_LT" {
   provider = aws.brazil
   name_prefix   = "brazil_LT"
-  image_id      = data.aws_ami.amazon-linux-2.id
+  image_id      = "ami-0c820c196a818d66a"
   instance_type = "t2.micro"
   # key_name      = "linuxbox"
-  vpc_security_group_ids = [aws_security_group.app1-sg01-servers.id]
+  vpc_security_group_ids = [aws_security_group.app1-sg13-servers.id]
 
   iam_instance_profile {
     arn = aws_iam_instance_profile.ec2_instance_profile.arn

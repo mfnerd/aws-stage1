@@ -7,6 +7,9 @@ terraform {
   }
 }
 provider "aws" {
+  region = "ap-northeast-1"
+}
+provider "aws" {
   alias  = "tokyo"
   region = "ap-northeast-1"
 }
@@ -20,7 +23,7 @@ provider "aws" {
 }
 provider "aws" {
   alias  = "london"
-  region = "eu-west-1"
+  region = "eu-west-2"
 }
 provider "aws" {
   alias  = "brazil"
@@ -28,7 +31,7 @@ provider "aws" {
 }
 provider "aws" {
   alias  = "hongkong"
-  region = "ap-southeast-1"
+  region = "ap-east-1"
 }
 provider "aws" {
   alias  = "australia"

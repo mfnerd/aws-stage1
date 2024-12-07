@@ -1,7 +1,7 @@
 #Create VPC in Tokyo, NYC, London, California, Hong Kong, Australia, and Brazil
 
 resource "aws_vpc" "teledoc-tokyo" {
-  provider = "aws.tokyo"
+  provider = aws.tokyo
   cidr_block = "10.181.0.0/16"
 
   tags = {
@@ -12,7 +12,7 @@ resource "aws_vpc" "teledoc-tokyo" {
   }
 }
 resource "aws_vpc" "teledoc-nyc" {
-  provider = "aws.nyc"
+  provider = aws.nyc
   cidr_block = "10.182.0.0/16"
 
   tags = {
@@ -23,7 +23,7 @@ resource "aws_vpc" "teledoc-nyc" {
   }
 }
 resource "aws_vpc" "teledoc-london" {
-  provider = "aws.london"
+  provider = aws.london
   cidr_block = "10.183.0.0/16"
 
   tags = {
@@ -34,7 +34,7 @@ resource "aws_vpc" "teledoc-london" {
   }
 }
 resource "aws_vpc" "teledoc-california" {
-  provider = "aws.california"
+  provider = aws.california
   cidr_block = "10.184.0.0/16"
 
   tags = {
@@ -45,7 +45,7 @@ resource "aws_vpc" "teledoc-california" {
   }
 }
 resource "aws_vpc" "teledoc-hongkong" {
-  provider = "aws.hongkong"
+  provider = aws.hongkong
   cidr_block = "10.185.0.0/16"
 
   tags = {
@@ -56,7 +56,7 @@ resource "aws_vpc" "teledoc-hongkong" {
   }
 }
 resource "aws_vpc" "teledoc-australia" {
-  provider = "aws.australia"
+  provider = aws.australia
   cidr_block = "10.186.0.0/16"
 
   tags = {
@@ -67,7 +67,7 @@ resource "aws_vpc" "teledoc-australia" {
   }
 }
 resource "aws_vpc" "teledoc-brazil" {
-  provider = "aws.brazil"
+  provider = aws.brazil
   cidr_block = "10.187.0.0/16"
 
   tags = {

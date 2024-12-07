@@ -62,7 +62,7 @@ resource "aws_eip" "nat-california" {
 resource "aws_nat_gateway" "nat-california" {
   provider = aws.california
   allocation_id = aws_eip.nat-california.id
-  subnet_id     = aws_subnet.public-us-west-1a.id
+  subnet_id     = aws_subnet.public-us-west-1b.id
 
   tags = {
     Name = "nat-california"
@@ -98,7 +98,7 @@ resource "aws_eip" "nat-australia" {
 resource "aws_nat_gateway" "nat-australia" {
   provider = aws.australia
   allocation_id = aws_eip.nat-australia.id
-  subnet_id     = aws_subnet.public-ap-southeast-1a.id
+  subnet_id     = aws_subnet.public-ap-southeast-2a.id
 
   tags = {
     Name = "nat-australia"

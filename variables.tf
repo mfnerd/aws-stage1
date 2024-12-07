@@ -22,20 +22,20 @@ variable "image_id" {
 }
 
 #Create language variables for the launch template for each region
-variable "locale" {
-  description = "The locale for the launch template"
-  type        = string
-}
+# variable "locale" {
+#   description = "The locale for the launch template"
+#   type        = string
+# }
 
-variable "lang" {
-  description = "The language for the launch template"
-  type        = string
-}
+# variable "lang" {
+#   description = "The language for the launch template"
+#   type        = string
+# }
 
-variable "lc_all" {
-  description = "The LC_ALL for the launch template"
-  type        = string
-}
+# variable "lc_all" {
+#   description = "The LC_ALL for the launch template"
+#   type        = string
+# }
 
 variable "vpc_cidr_blocks" {
   description = "CIDR blocks for VPCs in each region"
@@ -45,4 +45,33 @@ variable "vpc_cidr_blocks" {
 variable "location" {
   description = "The location for naming resources"
   type        = map(string)  
+}
+variable "peer_transit_gateway_id_hk" {
+  description = "The ID of the peer transit gateway in Hong Kong"
+  type        = string
+}
+
+variable "peer_transit_gateway_id_au" {
+  description = "The ID of the peer transit gateway in Australia"
+  type        = string
+}
+variable "peer_transit_gateway_id_ca" {
+  description = "The ID of the peer transit gateway in California"
+  type        = string
+}
+variable "peer_transit_gateway_id_ny" {
+  description = "The ID of the peer transit gateway in tNew York"
+  type        = string
+}
+variable "peer_transit_gateway_id_uk" {
+  description = "The ID of the peer transit gateway in London"
+  type        = string
+}
+variable "peer_transit_gateway_id_jp" {
+  description = "The ID of the peer transit gateway in Japan"
+  type        = string
+}
+variable "peer_transit_gateway_id_br" {
+  description = "The ID of the peer transit gateway in Brazil"
+  type        = string
 }

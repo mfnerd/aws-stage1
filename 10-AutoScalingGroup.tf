@@ -117,7 +117,7 @@ resource "aws_autoscaling_group" "california_asg" {
   max_size              = 3
   desired_capacity      = 2
   vpc_zone_identifier   = [
-    aws_subnet.private-us-west-1a.id,
+    aws_subnet.private-us-west-1b.id,
     aws_subnet.private-us-west-1c.id
   ]
   health_check_type          = "ELB"
@@ -154,13 +154,13 @@ resource "aws_autoscaling_group" "hongkong_asg" {
   max_size              = 3
   desired_capacity      = 2
   vpc_zone_identifier   = [
-    aws_subnet.private-ap-southeast-1a.id,
-    aws_subnet.private-ap-southeast-1b.id
+    aws_subnet.private-ap-east-1a.id,
+    aws_subnet.private-ap-east-1b.id
   ]
   health_check_type          = "ELB"
   health_check_grace_period  = 300
   force_delete               = true
-  target_group_arns          = [aws_lb_target_group.hongkong_tg.arn]
+  target_group_arns          = [aws_lb_target_group.hong_kong_tg.arn]
 
   launch_template {
     id      = aws_launch_template.hongkong_LT.id
@@ -229,7 +229,7 @@ resource "aws_autoscaling_group" "brazil_asg" {
   desired_capacity      = 2
   vpc_zone_identifier   = [
     aws_subnet.private-sa-east-1a.id,
-    aws_subnet.private-sa-east-1b.id
+    aws_subnet.private-sa-east-1c.id
   ]
   health_check_type          = "ELB"
   health_check_grace_period  = 300

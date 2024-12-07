@@ -120,7 +120,7 @@ resource "aws_subnet" "private-us-east-1c" {
 
 #Create Subnets in London Region
 resource "aws_subnet" "public-eu-west-2a" {
-  provider = aws.london
+  provider                = aws.london
   vpc_id                  = aws_vpc.teledoc-london.id
   cidr_block              = "10.183.1.0/24"
   availability_zone       = "eu-west-2a"
@@ -134,7 +134,7 @@ resource "aws_subnet" "public-eu-west-2a" {
   }
 }
 resource "aws_subnet" "public-eu-west-2b" {
-  provider = aws.london
+  provider                = aws.london
   vpc_id                  = aws_vpc.teledoc-london.id
   cidr_block              = "10.183.2.0/24"
   availability_zone       = "eu-west-2b"
@@ -148,7 +148,7 @@ resource "aws_subnet" "public-eu-west-2b" {
   }
 }
 resource "aws_subnet" "private-eu-west-2a" {
-  provider = aws.london
+  provider                = aws.london
   vpc_id                  = aws_vpc.teledoc-london.id
   cidr_block              = "10.183.11.0/24"
   availability_zone       = "eu-west-2a"
@@ -176,15 +176,15 @@ resource "aws_subnet" "private-eu-west-2b" {
   }
 }
 #Create Subnets in California Region
-resource "aws_subnet" "public-us-west-1a" {
+resource "aws_subnet" "public-us-west-1b" {
   provider = aws.california
   vpc_id                  = aws_vpc.teledoc-california.id
   cidr_block              = "10.184.1.0/24"
-  availability_zone       = "us-west-1a"
+  availability_zone       = "us-west-1b"
   map_public_ip_on_launch = true
 
   tags = {
-    Name    = "public-us-west-1a"
+    Name    = "public-us-west-1b"
     Service = "application1"
     Owner   = "MFNerd"
     Planet  = "Saturn"
@@ -204,15 +204,15 @@ resource "aws_subnet" "public-us-west-1c" {
     Planet  = "Saturn"
   }
 }
-resource "aws_subnet" "private-us-west-1a" {
+resource "aws_subnet" "private-us-west-1b" {
   provider = aws.california
   vpc_id                  = aws_vpc.teledoc-california.id
   cidr_block              = "10.184.11.0/24"
-  availability_zone       = "us-west-1a"
+  availability_zone       = "us-west-1b"
   map_public_ip_on_launch = true
 
   tags = {
-    Name    = "private-us-west-1a"
+    Name    = "private-us-west-1b"
     Service = "application1"
     Owner   = "MFNerd"
     Planet  = "Saturn"
@@ -233,57 +233,57 @@ resource "aws_subnet" "private-us-west-1c" {
   }
 }
 #Create Subnets in Hong Kong Region
-resource "aws_subnet" "public-ap-southeast-1a" {
+resource "aws_subnet" "public-ap-east-1a" {
   provider = aws.hongkong
   vpc_id                  = aws_vpc.teledoc-hongkong.id
   cidr_block              = "10.185.1.0/24"
-  availability_zone       = "ap-southeast-1a"
+  availability_zone       = "ap-east-1a"
   map_public_ip_on_launch = true
 
   tags = {
-    Name    = "public-ap-southeast-1a"
+    Name    = "public-ap-east-1a"
     Service = "application1"
     Owner   = "MFNerd"
     Planet  = "Jupiter"
   }
 }
-resource "aws_subnet" "public-ap-southeast-1c" {
+resource "aws_subnet" "public-ap-east-1b" {
   provider = aws.hongkong
   vpc_id                  = aws_vpc.teledoc-hongkong.id
   cidr_block              = "10.185.2.0/24"
-  availability_zone       = "ap-southeast-1c"
+  availability_zone       = "ap-east-1b"
   map_public_ip_on_launch = true
 
   tags = {
-    Name    = "public-ap-southeast-1c"
+    Name    = "public-ap-east-1b"
     Service = "application1"
     Owner   = "MFNerd"
     Planet  = "Jupiter"
   }
 }
-resource "aws_subnet" "private-ap-southeast-1a" {
+resource "aws_subnet" "private-ap-east-1a" {
   provider = aws.hongkong
   vpc_id                  = aws_vpc.teledoc-hongkong.id
   cidr_block              = "10.185.11.0/24"
-  availability_zone       = "ap-southeast-1a"
+  availability_zone       = "ap-east-1a"
   map_public_ip_on_launch = true
 
   tags = {
-    Name    = "private-ap-southeast-1a"
+    Name    = "private-ap-east-1a"
     Service = "application1"
     Owner   = "MFNerd"
     Planet  = "Jupiter"
   }
 }
-resource "aws_subnet" "private-ap-southeast-1c" {
+resource "aws_subnet" "private-ap-east-1b" {
   provider = aws.hongkong
   vpc_id                  = aws_vpc.teledoc-hongkong.id
   cidr_block              = "10.185.12.0/24"
-  availability_zone       = "ap-southeast-1c"
+  availability_zone       = "ap-east-1b"
   map_public_ip_on_launch = true
 
   tags = {
-    Name    = "private-ap-southeast-1c"
+    Name    = "private-ap-east-1b"
     Service = "application1"
     Owner   = "MFNerd"
     Planet  = "Jupiter"
