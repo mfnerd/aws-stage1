@@ -1,3 +1,3 @@
 # aws-stage1
-# needs modules to link resources and create shared networking resources
+# abandoned modules. still need syslog server/internal LB/ASG in Tokyo. Configure Bucket policy.
 # 
