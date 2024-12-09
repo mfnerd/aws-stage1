@@ -187,3 +187,56 @@ resource "aws_lb_target_group" "brazil_tg" {
     Project = "Web Service"
   }
 }
+#Create target group for Osaka region
+resource "aws_lb_target_group" "osaka_tg" {
+  name     = "osaka-target-group"
+  port     = 80
+  protocol = "HTTP"
+  provider = aws.osaka
+  vpc_id   = aws_vpc.teledoc-osaka.id
+  target_type = "instance"
+
+  health_check {
+    enabled             = true
+    interval            = 30
+    path                = "/"
+    protocol            = "HTTP"
+    healthy_threshold   = 5
+    unhealthy_threshold = 2
+    timeout             = 5
+    matcher             = "200"
+  }
+
+  tags = {
+    Name    = "osakaTargetGroup"
+    Service = "osaka"
+    Owner   = "User"
+    Project = "Web Service"
+  }
+}
+# resource "aws_lb_target_group" "osaka_rsyslog_tg" {
+#   name     = "osaka-rsyslog-target-group"
+#   port     = 514
+#   protocol = "UDP"
+#   provider = aws.osaka
+#   vpc_id   = aws_vpc.teledoc-osaka.id
+#   target_type = "instance"
+
+#   health_check {
+#     enabled             = true
+#     interval            = 30
+#     path                = "/"
+#     protocol            = "UDP"
+#     healthy_threshold   = 5
+#     unhealthy_threshold = 2
+#     timeout             = 5
+#     matcher             = "200"
+#   }
+
+#   tags = {
+#     Name    = "osakaRsyslogTargetGroup"
+#     Service = "syslogger"
+#     Owner   = "User"
+#     Project = "Web Service"
+#   }
+# }

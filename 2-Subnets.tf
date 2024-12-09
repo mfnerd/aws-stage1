@@ -400,3 +400,46 @@ resource "aws_subnet" "private-sa-east-1c" {
     Planet  = "Venus"
   }
 }
+#Create Subnets in Osaka Region
+resource "aws_subnet" "private-ap-northeast-3a" {
+  provider = aws.osaka
+  vpc_id                  = aws_vpc.teledoc-osaka.id
+  cidr_block              = "10.188.11.0/24"
+  availability_zone       = "ap-northeast-3a"
+  map_public_ip_on_launch = false
+
+  tags = {
+    Name    = "private-ap-northeast-3a"
+    Service = "application1"
+    Owner   = "MFNerd"
+    Planet  = "Mercury"
+  }
+}
+resource "aws_subnet" "private-ap-northeast-3b" {
+  provider = aws.osaka
+  vpc_id                  = aws_vpc.teledoc-osaka.id
+  cidr_block              = "10.188.12.0/24"
+  availability_zone       = "ap-northeast-3b"
+  map_public_ip_on_launch = false
+
+  tags = {
+    Name    = "private-ap-northeast-3b"
+    Service = "application1"
+    Owner   = "MFNerd"
+    Planet  = "Mercury"
+  }
+}
+resource "aws_subnet" "public-ap-northeast-3c" {
+  provider = aws.osaka
+  vpc_id                  = aws_vpc.teledoc-osaka.id
+  cidr_block              = "10.188.1.0/24"
+  availability_zone       = "ap-northeast-3c"
+  map_public_ip_on_launch = false
+
+  tags = {
+    Name    = "private-ap-northeast-3c"
+    Service = "application1"
+    Owner   = "MFNerd"
+    Planet  = "Mercury"
+  }
+}

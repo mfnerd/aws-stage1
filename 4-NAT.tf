@@ -122,3 +122,19 @@ resource "aws_nat_gateway" "nat-brazil" {
   }
   depends_on = [aws_internet_gateway.igw-brazil]
 }
+resource "aws_eip" "nat-osaka" {
+  provider = aws.osaka
+  tags = {
+    Name = "nat-osaka"
+  }
+}
+resource "aws_nat_gateway" "nat-osaka" {
+  provider = aws.osaka
+  allocation_id = aws_eip.nat-osaka.id
+  subnet_id     = aws_subnet.public-ap-northeast-3c.id
+
+  tags = {
+    Name = "nat-osaka"
+  }
+  depends_on = [aws_internet_gateway.igw-osaka]
+}

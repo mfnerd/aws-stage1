@@ -257,3 +257,40 @@ resource "aws_autoscaling_group" "brazil_asg" {
     propagate_at_launch = true
   }
 }
+#Create an Auto Scaling Group for Osaka within two availability zones
+resource "aws_autoscaling_group" "osaka_asg" {
+  provider              = aws.osaka
+  name_prefix           = "teledoc-osaka-auto-scaling-group-"
+  min_size              = 1
+  max_size              = 3
+  desired_capacity      = 2
+  vpc_zone_identifier   = [
+    aws_subnet.private-ap-northeast-3a.id,
+    aws_subnet.private-ap-northeast-3b.id
+  ]
+  health_check_type          = "ELB"
+  health_check_grace_period  = 300
+  force_delete               = true
+  target_group_arns          = [aws_lb_target_group.osaka_tg.arn]
+
+  launch_template {
+    id      = aws_launch_template.osaka_LT.id
+    version = "$Latest"
+  }
+
+  enabled_metrics = ["GroupMinSize", "GroupMaxSize", "GroupDesiredCapacity", "GroupInServiceInstances", "GroupTotalInstances"]
+
+  # Instance protection for launching
+  initial_lifecycle_hook {
+    name                  = "instance-protection-launch"
+    lifecycle_transition  = "autoscaling:EC2_INSTANCE_LAUNCHING"
+    default_result        = "CONTINUE"
+    heartbeat_timeout     = 60
+    notification_metadata = "{\"key\":\"value\"}"
+  }
+  tag {
+    key                 = "Name"
+    value               = "osaka-asg-instance"
+    propagate_at_launch = true
+  }
+}

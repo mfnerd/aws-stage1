@@ -77,3 +77,13 @@ resource "aws_vpc" "teledoc-brazil" {
     Planet = "Uranus"
   }
 }
+resource "aws_vpc" "teledoc-osaka" {
+  provider = aws.osaka
+  cidr_block = "10.188.0.0/16"
+  tags = {
+    Name = "teledoc-osaka"
+    Service = "applicationLB"
+    Owner = "MFnerd"
+    Planet = "Uranus"
+  }
+}

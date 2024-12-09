@@ -76,3 +76,15 @@ resource "aws_internet_gateway" "igw-brazil" {
     Planet  = "Venus"
   }
 }
+#Create internet gateway in Osaka
+resource "aws_internet_gateway" "igw-osaka" {
+  provider = aws.osaka
+  vpc_id = aws_vpc.teledoc-osaka.id
+
+  tags = {
+    Name    = "osaka_IGW"
+    Service = "application1"
+    Owner   = "MFNerd"
+    Planet  = "Mercury"
+  }
+}

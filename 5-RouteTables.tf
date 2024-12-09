@@ -332,3 +332,45 @@ resource "aws_route_table_association" "private-sa-east-1c" {
   subnet_id      = aws_subnet.private-sa-east-1c.id
   route_table_id = aws_route_table.private-brazil.id
 }
+# Create route tables for private subnets for Osaka
+resource "aws_route_table" "private-osaka" {
+  provider = aws.osaka
+  vpc_id   = aws_vpc.teledoc-osaka.id
+
+  route {
+    cidr_block = "0.0.0.0/0"
+    nat_gateway_id = aws_nat_gateway.nat-osaka.id
+  }
+
+  tags = {
+    Name = "private-route-table-osaka"
+  }
+}
+resource "aws_route_table" "public-osaka" {
+  provider = aws.osaka
+  vpc_id   = aws_vpc.teledoc-osaka.id
+
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.igw-osaka.id
+  }
+
+  tags = {
+    Name = "public-route-table-osaka"
+  }
+}
+resource "aws_route_table_association" "private-ap-northeast-3a" {
+  provider = aws.osaka
+  subnet_id      = aws_subnet.private-ap-northeast-3a.id
+  route_table_id = aws_route_table.private-osaka.id
+}
+resource "aws_route_table_association" "private-ap-northeast-3b" {
+  provider = aws.osaka
+  subnet_id      = aws_subnet.private-ap-northeast-3b.id
+  route_table_id = aws_route_table.private-osaka.id
+}
+resource "aws_route_table_association" "public-ap-northeast-3c" {
+  provider = aws.osaka
+  subnet_id      = aws_subnet.public-ap-northeast-3c.id
+  route_table_id = aws_route_table.public-osaka.id
+}
