@@ -222,7 +222,7 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "osaka_vpc_attachment" {
 #Create peering attachments between Tokyo, Hong Kong, Australia, and California
 resource "aws_ec2_transit_gateway_peering_attachment" "jp-hk-attachment" {
   provider = aws.tokyo
-  peer_account_id = "061039804531"
+  peer_account_id = <AccountID>
   peer_region = "ap-east-1"
   peer_transit_gateway_id = aws_ec2_transit_gateway.transit_gateway-hk.id
   transit_gateway_id = aws_ec2_transit_gateway.transit_gateway-jp.id
@@ -233,7 +233,7 @@ resource "aws_ec2_transit_gateway_peering_attachment" "jp-hk-attachment" {
 }
 resource "aws_ec2_transit_gateway_peering_attachment" "jp-au-attachment" {
   provider = aws.tokyo
-  peer_account_id = "061039804531"
+  peer_account_id = <AccountID>
   peer_region = "ap-southeast-2"
   peer_transit_gateway_id = aws_ec2_transit_gateway.transit_gateway-au.id
     transit_gateway_id = aws_ec2_transit_gateway.transit_gateway-jp.id
@@ -245,7 +245,7 @@ resource "aws_ec2_transit_gateway_peering_attachment" "jp-au-attachment" {
 }
 resource "aws_ec2_transit_gateway_peering_attachment" "jp-ny-attachment" {
   provider = aws.tokyo
-  peer_account_id = "061039804531"
+  peer_account_id = <AccountID>
   peer_region = "us-east-1"
   peer_transit_gateway_id = aws_ec2_transit_gateway.transit_gateway-nyc.id
   transit_gateway_id = aws_ec2_transit_gateway.transit_gateway-jp.id
@@ -258,7 +258,7 @@ resource "aws_ec2_transit_gateway_peering_attachment" "jp-ny-attachment" {
 #Create peering attachments between NYC, California, London, and Brazil
 resource "aws_ec2_transit_gateway_peering_attachment" "nyc-ca-attachment" {
   provider = aws.nyc
-  peer_account_id = "061039804531"
+  peer_account_id = <AccountID>
   peer_region = "us-west-1"
   peer_transit_gateway_id = aws_ec2_transit_gateway.transit_gateway-ca.id
   transit_gateway_id = aws_ec2_transit_gateway.transit_gateway-nyc.id
@@ -269,7 +269,7 @@ resource "aws_ec2_transit_gateway_peering_attachment" "nyc-ca-attachment" {
 }
 resource "aws_ec2_transit_gateway_peering_attachment" "nyc-london-attachment" {
   provider = aws.nyc
-  peer_account_id = "061039804531"
+  peer_account_id = <AccountID>
   peer_region = "eu-west-2"
   peer_transit_gateway_id = aws_ec2_transit_gateway.transit_gateway-london.id
   transit_gateway_id = aws_ec2_transit_gateway.transit_gateway-nyc.id
@@ -281,7 +281,7 @@ resource "aws_ec2_transit_gateway_peering_attachment" "nyc-london-attachment" {
 }
 resource "aws_ec2_transit_gateway_peering_attachment" "nyc-brazil-attachment" {
   provider = aws.nyc
-  peer_account_id = "061039804531"
+  peer_account_id = <AccountID>
   peer_region = "sa-east-1"
   peer_transit_gateway_id = aws_ec2_transit_gateway.transit_gateway-brazil.id
   transit_gateway_id = aws_ec2_transit_gateway.transit_gateway-nyc.id
@@ -293,7 +293,7 @@ resource "aws_ec2_transit_gateway_peering_attachment" "nyc-brazil-attachment" {
 }
 resource "aws_ec2_transit_gateway_peering_attachment" "jp-osaka-attachment" {
   provider = aws.tokyo
-  peer_account_id = "061039804531"
+  peer_account_id = <AccountID>
   peer_region = "ap-northeast-3"
   peer_transit_gateway_id = aws_ec2_transit_gateway.transit_gateway-osaka.id
   transit_gateway_id = aws_ec2_transit_gateway.transit_gateway-jp.id
@@ -305,7 +305,7 @@ resource "aws_ec2_transit_gateway_peering_attachment" "jp-osaka-attachment" {
 }
 # resource "aws_ec2_transit_gateway_peering_attachment" "ny-jp-attachment" {
 #   provider = aws.nyc
-#   peer_account_id = "061039804531"
+#   peer_account_id = <AccountID>
 #   peer_region = "ap-northeast-1"
 #   peer_transit_gateway_id = aws_ec2_transit_gateway.transit_gateway-jp.id
 #   transit_gateway_id = aws_ec2_transit_gateway.transit_gateway-nyc.id
